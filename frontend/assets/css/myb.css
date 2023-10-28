@@ -1,0 +1,54 @@
+.form-styling{
+    background-color: #90b0d0;
+    /* max-height: 100%; */
+    /* width: 100%; */
+    padding: 20px;
+    border-radius: 20px;
+   }
+   .form-styling button {
+    align-items: center;
+    height: 45px;
+    width: 130px;
+    color: #090909;
+    padding: 0.7em 1.7em;
+    margin-top:15px;
+    font-size: 18px;
+    border-radius: 0.5em;
+    /* background: #e8e8e8; */
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 3px 3px 6px #c5c5c5,
+    -3px -3px 6px #DBB8C9;
+   }
+   .form-styling button:active {
+    color: #666;
+    
+    box-shadow: inset 6px 6px 18px #c5c5c5,
+                inset -6px -6px 18px #c2b7bc;
+   }
+  .form-styling input ,textarea,select,option {
+    margin-top: 10px;
+    /* padding-top: 10px; */
+    margin-bottom: 5px;
+    background-color: #dee2e6;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 0.6rem;
+    color: #141619;
+    box-shadow: 0 0.2rem #81727b;
+    /* cursor: pointer; */
+   }
+   
+   .form-styling input,textarea,select,option:focus {
+    outline-color: #bb4e83;
+   }
+
+
+   .QRCode{
+    height: 500px;
+    padding-top: 30px;
+    width: 100%;
+   }
+  

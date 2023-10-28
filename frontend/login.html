@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zxx">
+
+<!-- Mirrored from templates.envytheme.com//default/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Dec 2022 10:00:51 GMT -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Links of CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/simplebar.min.css">
+    <link rel="stylesheet" href="assets/css/metismenu.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+    <title>My Year Book</title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+
+
+<style>
+    .field-icon {
+        float: right;
+        margin-left: -25px;
+        margin-top: -38px;
+        position: relative;
+        z-index: 2;
+        margin-right: 30px;
+    }
+</style>
+
+
+<body>
+
+    <!-- Start Preloader Area -->
+    <div class="preloader-area">
+        <div class="spinner">
+            <div class="inner">
+                <div class="disc"></div>
+                <div class="disc"></div>
+                <div class="disc"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+
+    <!-- Start Preloader Area -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+                <img class="img-fluid" style="border-radius: 50%; background-color: white;" src="assets/images/logo.png"
+                    alt="image" height="300px" width="300px">
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="login-form">
+                    <h2>Login</h2>
+
+                    <form onsubmit="loginFunc(); {return false}">
+                        <div class="form-group">
+                            <label>Username or email</label>
+                            <input type="text" class="form-control" placeholder="Username" id="email">
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password" id="password">
+                        </div> -->
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="col-md-12">
+                                <input type="password" class="form-control" autocomplete="current-password"
+                                    placeholder="Password" id="password">
+                                <span toggle="#password-field" class="fa-sharp fa-solid fa-eye-slash field-icon"
+                                    id="togglePassword"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="remember-me-wrap d-flex justify-content-between align-items-center">
+                            <p>
+                                <input type="checkbox" id="test1">
+                                <label for="test1">Remember me</label>
+                            </p>
+
+                            <div class="lost-your-password-wrap">
+                                <a href="forgot-password.html" class="lost-your-password">Forgot password ?</a>
+                            </div>
+                        </div>
+                        <div id="error" style="color:red"></div>
+                        <button type="submit" class="default-btn">Login </button>
+                        <div class="or-text"><span>Or</span></div>
+                        <button type="submit" class="google-btn bg-primary"><a class="text-white"
+                                href="register.html">Create an Account</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader Area -->
+
+    <!-- Links of JS files -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/simplebar.min.js"></script>
+    <script src="assets/js/metismenu.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+
+<!-- Mirrored from templates.envytheme.com//default/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Dec 2022 10:00:52 GMT -->
+
+</html>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        togglePassword.removeAttribute("class")
+        // toggle the eye slash icon
+        // togglePassword.setAttribute('class', 'fa-light fa-eye');
+        if (type == "text") {
+            togglePassword.setAttribute("class", "fa fa-fw fa-eye field-icon ")
+        }
+        else {
+            togglePassword.setAttribute("class", "fa fa-fw fa-eye-slash field-icon ")
+
+        }
+
+    });
+</script>

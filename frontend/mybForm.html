@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Year Book</title>
+    <link href="assets/css/myb.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Links of CSS files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/remixicon.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/simplebar.min.css">
+    <link rel="stylesheet" href="assets/css/metismenu.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div>
+                <h4 class="text-center mt-4"><strong>MYB Scholarship Registration</strong></h4>
+            </div>
+            <div class="col-lg-8 col-md-12">
+
+                <div style="background-color:; padding: 20px;">
+                    <div class="form-styling m-auto">
+
+                        <form onsubmit="abc();return false">
+                            <div class="d-flex">
+                                <input style="margin-right: 10px;" type="text" id="firstName" name="firstName"
+                                    placeholder="First Name" value="" />
+
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" value="" />
+
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="warning"></p>
+                                <p class="warning"></p>
+                            </div>
+
+                            <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name" value="" />
+                            <p class="warning"></p>
+
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" value="" />
+                            <p class="warning"></p>
+
+                            <input type="text" id="location" name="location" placeholder="Enter Your Permanent Address"
+                                value="" />
+                            <p class="warning"></p>
+
+                            <select id="gender" name="gender" style="max-width: 100%;">
+                                <option value="">Select Your Gender Type</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="others">Others</option>
+                            </select>
+                            <p class="warning"></p>
+
+
+                            <select id="education-detail-dropdown" name="educationDetail" required
+                                style="max-width: 100%;" class="mybclass" onchange="abc();return false">
+                                <option value="">Select Your Class</option>
+                                <option value="pg">Post Graduate</option>
+                                <option value="graduate">Under Graduate</option>
+                                <option value="twelveth">12'th</option>
+                                <option value="eleventh">11'th</option>
+                                <option value="tenth">10'th</option>
+                                <option value="ninth">9'th</option>
+                                <option value="eight">8'th</option>
+                            </select>
+
+
+                            <p class="warning"></p>
+
+                            <div id="details">
+                                <!-- <input type="text" id="board-name" name="boardDetails" placeholder="Board Name" value="" />
+                            <input type="text" id="school-name" name="schoolDetails" placeholder="School Name"
+                                value="" />
+                            <input type="text" placeholder="Stream" id="degree" name="degree" value="" />
+                            <div class="d-flex justify-content-between">
+                                <p class="warning"></p>
+                                <p class="warning"></p>
+                                <p class="warning"></p>
+                            </div> -->
+                            </div>
+                            <input type="text" id="reference" name="reference"
+                                placeholder="Reference If Any   example:'friend'" value="" />
+                            <p class="warning"></p>
+
+                            <input type="text" id="paymentID" name="paymentID" placeholder="Enter your payment I'D here"
+                                value="" />
+                            <p class="warning"></p>
+
+                            <div style="text-align: center;">
+                                <button class="p-2" type="submit" value="Submit">Next</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- form ends here -->
+            <!-- <div class="col-lg-4 col-md-12">
+                <div style="width: 80%; height: 80%; background:;">
+                    <div style="border: 5px solid black; margin-top: 20%;">
+                        <img src="assets/image/QRCodecopy.jpeg" class="QRCode" alt=""
+                            style="width: 100%; height: 50%; padding: auto; margin-top: -10px;" />
+
+                    </div>
+                    <div style="margin-top: 20px; color: blue; font-size: 15px; font-weight: 500;">Merchant Name: M/S.H
+                        M INNOVANCE LLP</div>
+                    <div style="color: blue; font-size: 15px; font-weight: 500;">Mobile Number: 8059465353</div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+    <script src="assets/js/myb.js"></script>
+</body>
+
+</html>
