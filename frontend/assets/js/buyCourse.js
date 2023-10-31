@@ -14,7 +14,44 @@ const isValidName = function(name){
   }
 
 let className = localStorage.getItem("className")
-let token = localStorage.getItem("token")
+let token = localStorage.getItem("_id")
+let userToken = localStorage.getItem("token")
+
+console.log(userToken)
+const getUserDetails=()=>{
+    let pay = document.getElementById("pay")
+    let content = document.getElementById("content")
+    console.log(pay)
+    console.log(content)
+    fetch("http://localhost:3000/profile/details", {
+      method: "GET",
+      headers: {
+          "Authorization": `Bearer ${userToken}`
+      }
+    }).then(res => res.json())
+      .then(data => {
+      if(data.status==true){
+          console.log(data.message.buyCourse)
+          let paidCourse = data.message.buyCourse.filter((item) => item.courseName.includes(className))
+          console.log(paidCourse)
+          if(paidCourse.length==1){
+              pay.style.display = "none"
+              content.style.display ="block"
+          }else if(paidCourse.length==0){
+              pay.style.display = "block"
+              content.style.display = "none"
+          }else{
+              pay.style.display = "block"
+              content.style.display = "none"
+          }
+      }else{
+          pay.style.display = "block"
+          content.style.display = "none"
+      }})
+}
+
+getUserDetails()
+
 // let fee = localStorage.getItem("fee")
 let subject = localStorage.getItem("subject")
 subject = subject.split(",")

@@ -1,11 +1,5 @@
 
 
-let token = localStorage.getItem("token")
-if (!token) {
-    location.href = "index.html"
-}
-
-
 
 
 const isValidName = function (name) {
@@ -29,40 +23,43 @@ document.getElementById("courseName").innerHTML = `NCERT ${className}th MYB${cla
 
 function displayRadioValue() {
     var ele = document.getElementsByName('stream');
+console.log(ele)
     for (i = 0; i < ele.length; i++) {
-        if (ele[i].checked) {
-            //    localStorage.setItem("stream",ele[i].value)
-            //    location.href = 'payment.html'
-            let courseName = `MYB${className}${ele[i].value}`
-            let amount;
-            if (className == "11") {
-                amount = 550
-            } else {
-                amount = 600
-            }
+        console.log(ele[i])
+        // if (ele[i].checked) { 
+        //     //    localStorage.setItem("stream",ele[i].value)
+        //     //    location.href = 'payment.html'
+        //     let courseName = `MYB${className}${ele[i].value}`
+        //     console.log(courseName)
+        //     let amount;
+        //     if (className == "11") {
+        //         amount = 550
+        //     } else {
+        //         amount = 600
+        //     }
 
-            fetch('http://localhost:3000/payment', {
-                method: "POST",
-                headers: {
-                    "Content-type": 'application/json',
+        //     // fetch('http://localhost:3000/payment', {
+        //     //     method: "POST",
+        //     //     headers: {
+        //     //         "Content-type": 'application/json',
 
-                },
-                body: JSON.stringify({
-                    amount,
-                    courseName,
-                    userId: "645c7f385690a8495e08ff55"
-                })
+        //     //     },
+        //     //     body: JSON.stringify({
+        //     //         amount,
+        //     //         courseName,
+        //     //         userId: "645c7f385690a8495e08ff55"
+        //     //     })
 
-            }).then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    console.log(data.redirect_url)
-                    location.href = data.redirect_url
-                })
-        }
-        else {
-            return
-        }
+        //     // }).then(res => res.json())
+        //     //     .then(data => {
+        //     //         console.log(data)
+        //     //         console.log(data.redirect_url)
+        //     //         location.href = data.redirect_url
+        //     //     })
+        // }
+        // else {
+        //     return
+        // }
     }
 
 }

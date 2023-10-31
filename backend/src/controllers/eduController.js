@@ -41,10 +41,10 @@ const getFiles = async (req, res) => {
 const subject = async (req, res) => {
   let className = req.params.className;
   try {
-    let response = await Edu.find({ className });
 
+    let response = await Edu.find({ className });
     res.json(response);
-  } catch (error) {}
+  } catch (error) { }
 };
 const allData = async (req, res) => {
   let response = await Edu.find();
@@ -70,4 +70,15 @@ const insertEducationData = async (req, res) => {
     res.json(error);
   }
 };
-module.exports = { saveClass, getFiles, subject, allData, insertEducationData };
+
+const updateEdu=async(req,res)=>{
+    
+    console.log(req.params)
+    let {className,subject,stream}=req.params;
+
+    let response=await Edu.updateMany({className,subject},{$set:{stream}},{upsert:true},{new:true})
+    res.send(response)
+
+}
+
+module.exports = { saveClass, getFiles, subject, allData, insertEducationData, updateEdu };

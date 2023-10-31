@@ -27,7 +27,6 @@ app.engine('html', require('ejs').renderFile);
 
 const mongouri =
   "mongodb+srv://guru:Guru7563@cluster0.ogxrryr.mongodb.net/education?retryWrites=true&w=majority";
-// const mongouri = 'mongodb+srv://kishor7008:kishor7008@cluster0.sksmz72.mongodb.net/'
 
 mongoose
   .connect(`${mongouri}`, {
@@ -72,18 +71,18 @@ app.get("/image/:filename", async (req, res) => {
   let data = req.params.filename
   console.log(data)
   
-  const file = await bucket.find({
-    filename: req.params.filename,
-  });
-  if (!file) {
-    return res.status(403).json("Not Found")
-  }
-  if (req.params.filename == null) {
-    return res.status(403).json("https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png")
-  } else {
-    bucket.openDownloadStreamByName(req.params.filename).pipe(res);
+  // const file = await bucket.find({
+  //   filename: req.params.filename,
+  // });
+  // if (!file) {
+  //   return res.status(403).json("Not Found")
+  // }
+  // if (req.params.filename == null) {
+  //   return res.status(403).json("https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png")
+  // } else {
+  //   bucket.openDownloadStreamByName(req.params.filename).pipe(res);
 
-  }
+  // }
 });
 
 

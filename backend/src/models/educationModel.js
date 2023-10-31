@@ -34,7 +34,11 @@ const eduSchema = new mongoose.Schema({
     isDeleted:{
         type:Boolean,
         default:false
+    },
+    stream:{
+    type: String  
     }
+    
 },{timeStamps:true})
 
 module.exports = mongoose.model('Education', eduSchema)

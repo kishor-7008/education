@@ -81,7 +81,7 @@ const postReq = async function (request, response) {
 //generate response
 
 const postRes = function (request, response) {
-  console.log(request)
+  //console.log(request)
   var paymentDetails;
   var ccavEncResponse = "",
     ccavResponse = "",
@@ -124,22 +124,45 @@ const postRes = function (request, response) {
       paidAt: paymentDetails.trans_date,
     };
     addPayment(params);
+    try {
+
+      let paidItem = await User.findOne({ _id: paymentDetails.merchant_param1 })
+      let addNew = [...paidItem.buyCourse, {
+        orderStatus: paymentDetails.order_status,
+        orderId: paymentDetails.order_id,
+        txnId: paymentDetails.tracking_id,
+        userId: paymentDetails.merchant_param1,
+        courseName: paymentDetails.merchant_param2
+      }]
+      
+      let addPaidCourse = await User.updateOne({ _id: paymentDetails.merchant_param1 }, {
+        $set: {
+          buyCourse: addNew
+        }
+      })
+    } catch (error) {
+      console.log(error.message)
+    }
   });
 
-  request.on("end", async function () {
+  request.on("end", function () {
     let resData = {
       orderStatus: paymentDetails.order_status,
       orderId: paymentDetails.order_id,
       txnId: paymentDetails.tracking_id,
       userId: paymentDetails.merchant_param1,
-      courseName: paymentDetails.merchant_param2
+      courseName: paymentDetails.merchant_param2,
+      paidAt: paymentDetails.trans_date,
+      amount:paymentDetails.amount
     };
 
-
-    let addPaidCourse = await User.updateOne({ _id: paymentDetails.merchant_param1 }, { $set: resData })
-
     console.log(resData)
-    response.status(200).render(resData);
+    if (paymentDetails.order_status == "Success") {
+      response.render("success", resData)
+    } else {
+      response.render("failed")
+    }
+
     response.end();
   });
 };

@@ -701,7 +701,7 @@ const profileImage = () => {
     profileEle.src = `http://localhost:3000/image/${avtar}`
     profileEle2.src = `http://localhost:3000/image/${avtar}`
 
-    profileEle1.src = `http://localhost:3000/image/${avtar}`
+    // profileEle1.src = `http://localhost:3000/image/${avtar}`
 
     // })
 
@@ -710,4 +710,4 @@ const profileImage = () => {
   }
 }
 
-profileImage()
+// profileImage()

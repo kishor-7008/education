@@ -25,6 +25,7 @@ const loginFunc = () => {
                 localStorage.setItem("token", data.accessToken)
                 localStorage.setItem("user", data.message.name)
                 localStorage.setItem("avtar", data.message.avtar)
+                localStorage.setItem("_id", data.message._id)
                 location.href = "education.html"
             }
         })

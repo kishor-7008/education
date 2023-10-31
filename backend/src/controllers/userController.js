@@ -49,7 +49,8 @@ const userLogin = async (req, res) => {
   return res.status(200).send({
     status: true, message: {
       name: isValidUser.name,
-      avtar: isValidUser.avtar
+      avtar: isValidUser.avtar,
+      _id:isValidUser._id
     }, accessToken: generateToken(isValidUser._id)
   })
 
@@ -306,6 +307,7 @@ const updateProfile = async (req, res) => {
 }
 
 const getProfile = async (req, res) => {
+  
   try {
     let user = await Users.findOne({ _id: req.user._id }).select({ password: 0 })
     res.status(200).json({ status: true, message: user })

@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="format-detection" content="telephone=no">
-    <title>GO Email Templates: Generic Template</title>
-
+    <title>Payment <%= orderStatus %></title>
+<link rel="icon" type="image/png" href="/favicon.png">
 </head>
 
 <body bgcolor="#d7d7d7" class="generic-template"
@@ -74,7 +74,7 @@
                             style="color: #F16522; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
                             <h1
                                 style="color: #F16522; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 700; line-height: 34px; margin-bottom: 0; margin-top: 0;">
-                                Payment received</h1>
+                                Payment <%= orderStatus %></h1>
                         </td>
                         <td width="36"
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
@@ -91,10 +91,10 @@
                         </td>
                         <td
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
-                            <p
+                            <!-- <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">
                                 Hi [name],
-                            </p>
+                            </p> -->
                         </td>
                         <td width="36"
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
@@ -113,18 +113,20 @@
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
                             <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">
-                                Your transaction was successful!</p>
+                                Your transaction was <%= orderStatus %>!</p>
                             <br>
                             <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0; ">
                                 <strong>Payment Details:</strong><br />
 
-                                Amount: €$moneyFormatter.format(${amount}) <br />
-                                Account: ${accountNumber}.<br /></p>
+                                Amount: <%= amount %> <br />
+                                OrderId: <%= orderId %> <br />
+                                Course Name: <%= courseName %> <br />
+                               
                             <br>
                             <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">
-                                We advise to keep this email for future reference.&nbsp;&nbsp;&nbsp;&nbsp;<br /></p>
+                            "Thank you for your purchase! We'd love to hear about your experience. Please consider leaving a review."<br /></p>
                         </td>
                         <td width="36"
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
@@ -154,14 +156,15 @@
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
                             <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">
-                                <strong>Transaction reference: ${authorizationCode}</strong></p>
+                                <strong>Transaction ID : <%= txnId %> </strong></p>
                             <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">
-                                Order date: [time] [date]</p>
+                                Transaction date: <%= paidAt %></p>
                             <p
                                 style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">
                             </p>
-                            <img src="https://www.nicepng.com/png/full/28-285297_click-here-green-button-png-capacite-ipo-allotment.png" width="200"/>
+                           <a href="http://127.0.0.1:5500/frontend/buyCourse.html"> <img src="https://www.nicepng.com/png/full/28-285297_click-here-green-button-png-capacite-ipo-allotment.png" width="200"/>
+                        </a>
                         </td>
                         <td width="36"
                             style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
