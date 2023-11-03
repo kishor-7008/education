@@ -12,7 +12,7 @@ const abc = () => {
     //     return;
     // }
 
-    fetch('https://educationbackend.onrender.com/api/user/register', {
+    fetch('http://localhost:3000/api/user/register', {
         method: "POST",
         headers: {
             "Content-type": "application/json",

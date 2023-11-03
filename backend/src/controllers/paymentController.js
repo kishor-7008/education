@@ -81,7 +81,6 @@ const postReq = async function (request, response) {
 //generate response
 
 const postRes = function (request, response) {
-  //console.log(request)
   var paymentDetails;
   var ccavEncResponse = "",
     ccavResponse = "",
@@ -105,7 +104,6 @@ const postRes = function (request, response) {
     ccavResponse = ccav.decrypt(encryption, keyBase64, ivBase64);
     // convert response into json
     paymentDetails = qs.parse(ccavResponse);
-    console.log(paymentDetails)
     // save Payment details in database
     const params = {
       orderStatus: {
@@ -156,7 +154,6 @@ const postRes = function (request, response) {
       amount:paymentDetails.amount
     };
 
-    console.log(resData)
     if (paymentDetails.order_status == "Success") {
       response.render("success", resData)
     } else {

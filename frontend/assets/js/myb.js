@@ -13,7 +13,6 @@ const isValidPhone = function (phone) {
 
 
 const classDetails = (data) => {
-  console.log(data)
 
   const ccource = document.getElementById("cc-name");
   const school = document.getElementById("school-name");
@@ -205,6 +204,7 @@ const abc = (e) => {
     data = {
       firstName,
       lastName,
+      phoneNumber,
       fatherName,
       location,
       gender,
@@ -213,7 +213,7 @@ const abc = (e) => {
       reference,
     }
   }
-  console.log(data)
+  // console.log(data)
   fetch("http://localhost:3000/sending/email", {
     method: "POST",
     headers: {

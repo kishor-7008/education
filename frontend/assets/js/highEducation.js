@@ -15,55 +15,52 @@ const isValidEmail = function (Email) {
 }
 
 
-
+let content = document.getElementById("content").style.display = "none"
 let className = localStorage.getItem("className")
-// let token = localStorage.getItem("token")
 document.getElementById("courseName").innerHTML = ""
 document.getElementById("courseName").innerHTML = `NCERT ${className}th MYB${className} Course`
 
+
+
+
+
+
 function displayRadioValue() {
-    var ele = document.getElementsByName('stream');
-console.log(ele)
-    for (i = 0; i < ele.length; i++) {
-        console.log(ele[i])
-        // if (ele[i].checked) { 
-        //     //    localStorage.setItem("stream",ele[i].value)
-        //     //    location.href = 'payment.html'
-        //     let courseName = `MYB${className}${ele[i].value}`
-        //     console.log(courseName)
-        //     let amount;
-        //     if (className == "11") {
-        //         amount = 550
-        //     } else {
-        //         amount = 600
-        //     }
+    var ele = document.querySelector('input[name="stream"]:checked').value
 
-        //     // fetch('http://localhost:3000/payment', {
-        //     //     method: "POST",
-        //     //     headers: {
-        //     //         "Content-type": 'application/json',
-
-        //     //     },
-        //     //     body: JSON.stringify({
-        //     //         amount,
-        //     //         courseName,
-        //     //         userId: "645c7f385690a8495e08ff55"
-        //     //     })
-
-        //     // }).then(res => res.json())
-        //     //     .then(data => {
-        //     //         console.log(data)
-        //     //         console.log(data.redirect_url)
-        //     //         location.href = data.redirect_url
-        //     //     })
-        // }
-        // else {
-        //     return
-        // }
+    let courseName = `MYB${className}${ele}`
+    let amount;
+    if (className == "11") {
+        amount = 550
+    } else {
+        amount = 600
     }
+
+
+
+    fetch('http://localhost:3000/payment', {
+        method: "POST",
+        headers: {
+            "Content-type": 'application/json',
+
+        },
+        body: JSON.stringify({
+            amount,
+            courseName,
+            userId: "645c7f385690a8495e08ff55"
+        })
+
+    }).then(res => res.json())
+        .then(data => {
+           
+            location.href = data.redirect_url
+        })
+
+
 
 }
 const buyCourse = () => {
+
     displayRadioValue()
 }
 
@@ -115,5 +112,36 @@ const func = () => {
 }
 
 const showContent = () => {
-    location.href = "portal.html"
+
+    var ele = document.querySelector('input[name="stream"]:checked').value
+    localStorage.setItem("courseName", `MYB${className}${ele}`)
+    location.href = "higherportal.html"
+}
+
+let userToken = localStorage.getItem("token")
+const checkPaid = (data) => {
+    let buy = document.getElementById("buy")
+    let content = document.getElementById("content")
+    // let paidCourse = JSON.parse(localStorage.getItem("paidCourse"))
+    fetch("http://localhost:3000/profile/details", {
+        method: "GET",
+        headers: {
+            "Authorization": `Bearer ${userToken}`
+        }
+    }).then(res => res.json())
+        .then((getData) => {
+            let paidCourse = getData.message.buyCourse
+         
+            let check = paidCourse.filter((item) =>
+                item.courseName.includes(data.value))
+            if (check.length == 0) {
+                buy.style.display = "block"
+                content.style.display = "none"
+            } else {
+                buy.style.display = "none"
+                content.style.display = "block"
+            }
+        })
+
+
 }

@@ -18,7 +18,8 @@ const {
   subject,
   allData,
   insertEducationData,
-  updateEdu
+  updateEdu,
+  higherEdu
 } = require("../controllers/eduController");
 // const {createClass,createSubject,createChapter, createSet,getAllTopics,fecthAllChapter, fetchAllSet, createQuestion} = require('../controllers/bookController');
 const { verify } = require("jsonwebtoken");
@@ -33,7 +34,8 @@ router.get("/profile/details", protect, getProfile)
 router.post("/api/classes/subjects", saveClass);
 router.get("/api/classes/subjects", getFiles);
 router.get("/subject/:className", subject);
-router.put("/update/edu/:className/:subject/:stream", updateEdu);
+router.put("/update/edu/:className/:subject/:courseName", updateEdu);
+router.get("/higher/edu/:className/:courseName", higherEdu);
 
 router.post("/get/touch", getInTouch);
 router.post("/code/send", codeSend);

@@ -85,7 +85,7 @@
                                             aria-haspopup="true" aria-expanded="false">
                                             <div class="menu-profile">
                                                 <img src="assets/images/user/user-1.jpg" class="rounded-circle"
-      id="profilePic2"                                              alt="image">
+                                                    id="profilePic2" alt="image">
 
                                                 <span class="userNameId" style="text-transform: uppercase;"></span>
                                             </div>
@@ -101,9 +101,10 @@
                                                 </li>
                                                 <li><i class="flaticon-privacy"></i> <a href="privacy.html">Privacy</a>
                                                 </li>
-                                                 <!-- <li><i class="flaticon-information"></i> <a
+                                                <!-- <li><i class="flaticon-information"></i> <a
                                                         href="help-and-support.html">Help & Support</a></li> -->
-                                               <li style="cursor: pointer;"><i class="flaticon-logout" ></i> <a onclick="logout()">Logout</a>
+                                                <li style="cursor: pointer;"><i class="flaticon-logout"></i> <a
+                                                        onclick="logout()">Logout</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -133,7 +134,7 @@
                                             aria-haspopup="true" aria-expanded="false">
                                             <div class="menu-profile">
                                                 <img src="assets/images/user/user-1.jpg" class="rounded-circle"
-      id="profilePic"                                              alt="image">
+                                                    id="profilePic" alt="image">
                                                 <span class="userNameId" style="text-transform: uppercase;"></span>
                                                 <span class="status-online"></span>
                                             </div>
@@ -151,9 +152,11 @@
                                                 </li>
                                                 <li><i class="flaticon-privacy"></i> <a href="privacy.html">Privacy</a>
                                                 </li>
-                                                 <!-- <li><i class="flaticon-information"></i> <a
+                                                <!-- <li><i class="flaticon-information"></i> <a
                                                         href="help-and-support.html">Help & Support</a></li> -->
-                                               <li style="cursor: pointer;"><i class="flaticon-logout" ></i> <a onclick="logout()">Logout</a>
+                                                <li style="cursor: pointer;"><i class="flaticon-logout"></i> <a
+                                               
+                                               ''     onclick="logout()">Logout</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -219,87 +222,93 @@
                                                                                 </span </button>
                                                                                 
                                         </ul> -->
+
+
+
                                         <div class="container" style="width:100%">
-                                          
                                             <div class="accordion" id="accordionExample">
-                                               
-                                                <div class="accordion-item">
-                                                    
+                                             <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingOne">
-                                                         
-                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                            <input type="radio" name="stream"  value="Arts" />   Arts
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                            aria-expanded="false" aria-controls="collapseOne">
+                                                            <input type="radio" name="stream" id="atrs" value="ART"  onchange="checkPaid(this)" /> Arts
                                                         </button>
                                                     </h2>
 
-                                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                                        data-bs-parent="#accordionExample">
+                                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                         <div class="accordion-body">
-                                                            English <br/>
-                                                            Math <br/>
-                                                            Sociology <br/>
-                                                            Economics <br/>
-                                                            Psychology <br/>
-                                                            </div>
+                                                            English <br />
+                                                            Math <br />
+                                                            Sociology <br />
+                                                            Economics <br />
+                                                            Psychology <br />
+                                                        </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingTwo">
-                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                            <input type="radio"  name="stream"  value="Science" / >  Science
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                            aria-expanded="false" aria-controls="collapseTwo">
+                                                            <input type="radio" name="stream" value="SCI" id="SCI" onchange="checkPaid(this)"/> Science
                                                         </button>
                                                     </h2>
-                                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                                        data-bs-parent="#accordionExample">
+                                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                                         <div class="accordion-body">
-                                                            English <br/>
-                                                            Math <br/>
-                                                            Chemistry <br/>
-                                                            Physics <br/>
-                                                            Biology <br/>
+                                                            English <br />
+                                                            Math <br />
+                                                            Chemistry <br />
+                                                            Physics <br />
+                                                            Biology <br />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="accordion-item">
                                                     <h2 class="accordion-header" id="headingThree">
-                                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                            <input type="radio"  name="stream"  value="Commerce"/>     Commerce
+                                                        <button class="accordion-button collapsed" type="button"
+                                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                            aria-expanded="false" aria-controls="collapseThree">
+                                                            <input type="radio" name="stream" value="COM"  id="COM"onchange="checkPaid(this)"/>
+                                                            Commerce
                                                         </button>
                                                     </h2>
-                                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                                        aria-labelledby="headingThree"
                                                         data-bs-parent="#accordionExample">
                                                         <div class="accordion-body">
-                                                            Accountancy  <br/>
-                                                             Economics  <br/>
-                                                              Business <br/>
-                                                               Studies  <br/>
-                                                                Statistics  <br/>
-                                                                 Mathematics  <br/>
-                                                                  Informatics Practices <br/>
+                                                            Accountancy <br />
+                                                            Economics <br />
+                                                            Business <br />
+                                                            Studies <br />
+                                                            Statistics <br />
+                                                            Mathematics <br />
+                                                            Informatics Practices <br />
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
-
                                     </div>
-                                    
+
                                     <!-- <div class="col-6 "> <button
                                             style="margin: auto;border-radius: 20px;" class="bg-primary" onclick="buyCourse()">Buy
                                             Course</button></div>
                                 </div> -->
-                                <div class="col-6">
-                                    <a href="#" class="a1" style="margin-top: 10%;" onclick="buyCourse()"> Buy Course</a>
-                                  </div>
-                            </div>
-                            <div class="col-6">
-                                <a href="#" class="a1" style="margin-top: 10%;" onclick="showContent()"> Buy Course</a>
-                            </div>
+                                    <div class="col-6" id="buy">
+                                        <a href="#" class="a1" style="margin-top: 10%;" onclick="buyCourse()"> Buy
+                                            Course</a>
+                                    </div>
+                                    <div class="col-6" id="content">
+                                    <a  class="a1" style="margin-top: 10%;" onclick="showContent()"> Show Content</a>
+                                </div>
+                                </div>
+                                
+
                             </div>
                         </div>
                         <div class="container">
@@ -345,7 +354,7 @@
                                     <p class="my-2">Use Code: MYB09 <span class="text-warning">&nbsp;&nbsp;T&C
                                             apply</span></p>
                                 </div> -->
-                            
+
                         </div>
                     </div>
                 </div>

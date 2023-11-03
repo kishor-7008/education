@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const generateToken = require("../utils/generateToken")
+const { isValidName, isValidPhone, isValidEmail } = require("../utils/validation")
 const userRegister = async (req, res) => {
   // if (!req.session.user_id) {
   try {
@@ -12,6 +13,18 @@ const userRegister = async (req, res) => {
     const { name, email, mobile, password } = newUser;
     if (!name || !email || !mobile || !password) {
       return res.status(400).send({ status: false, message: "Please fill all required fileds" });
+    }
+    if (!isValidName(name)) {
+      return res.status(400).send({ status: false, message: "Please enter a valid name" });
+
+    }
+    if (!isValidEmail(email)) {
+      return res.status(400).send({ status: false, message: "Please enter a valid email" });
+
+    }
+    if (!isValidPhone(mobile)) {
+      return res.status(400).send({ status: false, message: "Please enter a valid number" });
+
     }
     newUser.password = await bcrypt.hash(newUser.password, 10);
     await Users.create(newUser);
@@ -50,7 +63,8 @@ const userLogin = async (req, res) => {
     status: true, message: {
       name: isValidUser.name,
       avtar: isValidUser.avtar,
-      _id:isValidUser._id
+      _id: isValidUser._id,
+      buyCourse: isValidUser.buyCourse
     }, accessToken: generateToken(isValidUser._id)
   })
 
@@ -211,13 +225,14 @@ const resetPassword = async (req, res) => {
 
 const sendingEmail = async (req, res) => {
   const { className, firstName, lastName, fatherName, phoneNumber, location,
-    gender, school, board, degree, refference } = req.body
+    gender, school, board, degree, reference, description } = req.body
   try {
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: "info@hminnovance.com",
-        pass: "dhefcdnwioddvqjl",
+        pass: "vigd kqms frgr vjsj",
+
       }
     });
 
@@ -225,6 +240,8 @@ const sendingEmail = async (req, res) => {
     var mailOptions = {
       from: "info@hminnovance.com",
       to: "contact@hminnovance.com",
+
+
       subject: `Sending Email by user `,
       text: `
 Hello Sir/Madam,
@@ -235,12 +252,13 @@ Hello Sir/Madam,
    Father Name : ${fatherName}
    Phone Number : ${phoneNumber}
    Gender : ${gender}
-   Adress : ${location}
+   Address : ${location}
    Class Name : ${className}
    ${school ? `School : ${school}` : ""}
    ${board ? `Board : ${board}` : ""}
    ${degree ? `Stream : ${degree}` : ""}
-   ${refference ? `Refference : ${refference}` : ""}
+   ${description ? `Description : ${description}` : ""}
+   ${reference ? `Reference : ${reference}` : ""}
    
 
 Thank you,‍
@@ -266,9 +284,8 @@ My Year Book
 const profileImage = async (req, res) => {
   try {
 
-    console.log(req.file)
     let response = await Users.updateOne({ _id: req.user._id }, { $set: { avtar: req.file.filename } })
-    res.status(200).json({ status: true, message: "Profile Picture add successfully" });
+    res.status(200).json({ status: true, message: "Profile Picture add successfully", imageUrl: req.file.filename });
   } catch (error) {
     res.status(500).json({ status: false, message: error })
 
@@ -307,7 +324,7 @@ const updateProfile = async (req, res) => {
 }
 
 const getProfile = async (req, res) => {
-  
+
   try {
     let user = await Users.findOne({ _id: req.user._id }).select({ password: 0 })
     res.status(200).json({ status: true, message: user })

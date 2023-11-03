@@ -17,12 +17,9 @@ let className = localStorage.getItem("className")
 let token = localStorage.getItem("_id")
 let userToken = localStorage.getItem("token")
 
-console.log(userToken)
 const getUserDetails=()=>{
     let pay = document.getElementById("pay")
     let content = document.getElementById("content")
-    console.log(pay)
-    console.log(content)
     fetch("http://localhost:3000/profile/details", {
       method: "GET",
       headers: {
@@ -31,9 +28,7 @@ const getUserDetails=()=>{
     }).then(res => res.json())
       .then(data => {
       if(data.status==true){
-          console.log(data.message.buyCourse)
           let paidCourse = data.message.buyCourse.filter((item) => item.courseName.includes(className))
-          console.log(paidCourse)
           if(paidCourse.length==1){
               pay.style.display = "none"
               content.style.display ="block"
@@ -149,8 +144,7 @@ let paymentPage=()=>{
         })
 
     }).then(res=>res.json())
-    .then(data=>{console.log(data)
-        console.log(data.redirect_url)
+    .then(data=>{
         location.href = data.redirect_url
 })
    

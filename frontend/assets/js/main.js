@@ -681,14 +681,17 @@ const logout = () => {
 
 
 const profileImage = () => {
+  let avtar = localStorage.getItem("avtar")
+  if (!avtar) {
+    return;
+  }
   let token = localStorage.getItem("token")
   if (token) {
     let profileEle = document.getElementById("profilePic")
-    let profileEle1 = document.getElementById("profilePic1")
+ 
     let profileEle2 = document.getElementById("profilePic2")
-    console.log(profileEle2,"2disnvreiuv 93cjrgiurev 498j 943jf94p59ejf 89p")
-    let avtar = localStorage.getItem("avtar")
-    console.log(profileEle)
+    
+    
     // fetch("http://localhost:3000/profile/details", {
     //   method: "GET",
     //   headers: {
@@ -696,13 +699,17 @@ const profileImage = () => {
     //   }
     // }).then(res => res.json())
     //   .then(data => {
-    //     console.log(data)
 
     profileEle.src = `http://localhost:3000/image/${avtar}`
     profileEle2.src = `http://localhost:3000/image/${avtar}`
 
     // profileEle1.src = `http://localhost:3000/image/${avtar}`
-
+    if ( document.getElementById("profilePic1")){
+      document.getElementById("profilePic1").src = `http://localhost:3000/image/${avtar}`
+    }
+else{
+  return
+}
     // })
 
   } else {
@@ -710,4 +717,4 @@ const profileImage = () => {
   }
 }
 
-// profileImage()
+profileImage()

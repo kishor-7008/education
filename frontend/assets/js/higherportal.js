@@ -4,10 +4,6 @@
 
 
 
-let token = localStorage.getItem("token")
-if (!token) {
-    location.href = "index.html"
-}
 
 
 
@@ -17,10 +13,9 @@ if (!token) {
 let standard = document.getElementById("standard").innerHTML = `<a>Class : ${localStorage.getItem("className") + 'th'}</a>`
 
 
+let courseName = localStorage.getItem("courseName")
 let className = localStorage.getItem("className")
-if (className == "09") {
-    className = "9"
-}
+
 var func = (data) => {
 
     const url = data; // Replace with your PDF URL
@@ -37,7 +32,7 @@ var func = (data) => {
     showPdf.appendChild(iframe);
 }
 const subjectData = () => {
-    fetch(`https://educationbackend.onrender.com/subject/${className}'th`, {
+    fetch(`http://localhost:3000/higher/edu/${className}'th/${courseName}`, {
         method: "GET",
         headers: {
             "COntent-type": "application/json",

@@ -35,7 +35,7 @@ const eduSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    stream:{
+    courseName:{
     type: String  
     }
     

@@ -20,12 +20,12 @@ const loginFunc = () => {
             if (data.status == false) {
                 error.innerHTML = data.message
             } else {
-                console.log(data)
                 alert("Login Successfully")
                 localStorage.setItem("token", data.accessToken)
                 localStorage.setItem("user", data.message.name)
                 localStorage.setItem("avtar", data.message.avtar)
                 localStorage.setItem("_id", data.message._id)
+                localStorage.setItem("paidCourse", JSON.stringify(data.message.buyCourse))
                 location.href = "education.html"
             }
         })

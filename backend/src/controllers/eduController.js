@@ -73,12 +73,21 @@ const insertEducationData = async (req, res) => {
 
 const updateEdu=async(req,res)=>{
     
-    console.log(req.params)
-    let {className,subject,stream}=req.params;
+    let {className,subject,courseName}=req.params;
 
-    let response=await Edu.updateMany({className,subject},{$set:{stream}},{upsert:true},{new:true})
+  let response = await Edu.updateMany({ className, subject }, { $set: { courseName }},{upsert:true},{new:true})
     res.send(response)
 
 }
 
-module.exports = { saveClass, getFiles, subject, allData, insertEducationData, updateEdu };
+const higherEdu=async(req,res)=>{
+  try {
+    let {className,courseName}=req.params
+    let response=await Edu.find({className,courseName})
+  res.status(200).json(response)
+  } catch (error) {
+    res.status(500).json({ status: false, message: error })
+
+  }
+}
+module.exports = { saveClass, getFiles, subject, allData, insertEducationData, updateEdu, higherEdu };

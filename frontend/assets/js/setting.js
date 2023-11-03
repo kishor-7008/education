@@ -195,8 +195,7 @@ const profileUpdate = () => {
   let dob = document.getElementById("datepicker").value;
 
 
-  console.log([fistName, lastName, email, phoneNo, occupation,
-    gender, address, state, country, dob]);
+
 
   fetch('http://localhost:3000/update/profile/details', {
     method: "PUT",
@@ -209,11 +208,9 @@ const profileUpdate = () => {
       gender, address, state, country, dob
     })
   }).then(res => res.json())
-    .then(data => {console.log(data)
+    .then(data => {
       document.getElementById("profile").style.display = "block"
-      console.log(document.getElementById("profile"))
       document.getElementById("myTabContent").style.display ="none"
-      console.log(document.getElementById("myTabContent"))
 
 })
 
@@ -242,7 +239,7 @@ const getProfile = () => {
                         </div>
                         <div class="col-md-6">
                             <p><strong>Phone : </strong>${data.message.mobile}</p>
-                            <p><strong>Address : </strong>${data.message.address}</p>
+                            <p><strong>Address : </strong>${data.message.address ? data.message.address}</p>
 
                             <p><strong>State : </strong>${data.message.state}</p>
                             <p><strong>Country : </strong>${data.message.country}</p>
@@ -279,7 +276,7 @@ const uploadPicture = () => {
 
 const displaySelectedImage = () => {
   let uploadInput = document.getElementById("uploadInput");
-  let selectedImage = document.getElementById("profilePic1");
+  let selectedImage = document.getElementById("profilePic2");
 
   if (uploadInput.files.length > 0) {
     const file = uploadInput.files[0];
@@ -299,7 +296,6 @@ const displaySelectedImage = () => {
 
 const saveImage=()=>{
   let uploadInput = document.getElementById("uploadInput");
-  console.log(uploadInput.files[0])
   let fdata=new FormData();
   fdata.set('image', uploadInput.files[0])
 
@@ -310,7 +306,14 @@ const saveImage=()=>{
     },
     body:fdata
   }).then(res=>res.json())
-  .then(data=>console.log(data))
+  .then(data=>{
+    if(data.status==true){
+      localStorage.setItem("avtar",data.imageUrl)
+        alert(data.message);
+    }else{
+      return;
+    }
+  })
 
   document.getElementById("cameraID").style.display = "block"
   document.getElementById("saveID").style.display ="none"
