@@ -239,10 +239,10 @@ const getProfile = () => {
                         </div>
                         <div class="col-md-6">
                             <p><strong>Phone : </strong>${data.message.mobile}</p>
-                            <p><strong>Address : </strong>${data.message.address ? data.message.address}</p>
+                            <p><strong>Address : </strong>${data.message.address ? data.message.address :" "}</p>
 
-                            <p><strong>State : </strong>${data.message.state}</p>
-                            <p><strong>Country : </strong>${data.message.country}</p>
+                            <p><strong>State : </strong>${data.message.state ? data.message.state  :""}</p>
+                            <p><strong>Country : </strong>${data.message.country ? data.message.country :""}</p>
                         </div>
 
 
