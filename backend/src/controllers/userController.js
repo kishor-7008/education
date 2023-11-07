@@ -83,7 +83,7 @@ const getInTouch = async (req, res) => {
       service: 'gmail',
       auth: {
         user: "info@hminnovance.com",
-        pass: "dhefcdnwioddvqjl",
+        pass:  "vigd kqms frgr vjsj",
       }
     });
 
@@ -141,7 +141,7 @@ const codeSend = async (req, res) => {
         service: 'gmail',
         auth: {
           user: "info@hminnovance.com",
-          pass: "dhefcdnwioddvqjl",
+          pass:  "vigd kqms frgr vjsj",
         }
       });
       let otpnum = Math.floor(Math.random() * 90000) + 10000;
