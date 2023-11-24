@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="assets/css/dark.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <title>My Year Book</title>
+    <title>My Year Book</title> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -329,125 +329,119 @@
                     </div>
                 </div>
             </div>
-            <div class="container" style="width:100%">
-                <div class=" row d-flex justify-content-center" style="width:100%;margin:auto">
-                    <div>
-                        <h4 class="text-center mt-4"><strong>MYB Scholarship Registration</strong></h4>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-
-                        <div style="padding: 20px;">
-                            <div class="form-styling m-auto"
-                                style="background-color:transparent; padding: 20px;width:500px">
-
-                                <form id="mybForm">
-                                    <div class="d-flex">
-                                        <input style="margin-right: 10px;" type="text" id="firstName"
-                                            name="firstName" placeholder="First Name" value="" />
-
-                                        <input type="text" id="lastName" name="lastName" placeholder="Last Name"
-                                            value="" />
-
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <p class="warning"></p>
-                                        <p class="warning"></p>
-                                    </div>
-
-                                    <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name"
-                                        value="" />
-                                    <p class="warning"></p>
-
-                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"
-                                        value="" />
-                                    <p class="warning"></p>
-
-                                    <input type="text" id="location" name="location"
-                                        placeholder="Enter Your Permanent Address" value="" />
-                                    <p class="warning"></p>
-
-                                    <select id="gender" name="gender" style="max-width: 100%;">
-                                        <option value="">Select Your Gender Type</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                        <option value="others">Others</option>
-                                    </select>
-                                    <p class="warning"></p>
-
-
-                                    <select id="education-detail-dropdown" name="educationDetail" 
-                                        style="max-width: 100%;" class="mybclass" onchange="classDetails(this.value)"";return false">
-                                        <option value="">Select Your Class</option>
-                                        <option value="pg">Competitive Courses</option>
-                                        <option value="pg">Post Graduate</option>
-                                        <option value="graduate">Under Graduate</option>
-                                        <option value="twelveth">12'th</option>
-                                        <option value="eleventh">11'th</option>
-                                        <option value="tenth">10'th</option>
-                                        <option value="ninth">9'th</option>
-                                        <!-- <option value="eighth">8'th</option> -->
-                                    </select>
-                                    <input type="text" id="board-name" name="boardDetails" placeholder="Board Name" value="" class="classNone"/>
-                                    <input type="text" id="school-name" name="schoolDetails" placeholder="School Name"
-                                        value="" class="classNone"/>
-                                    <input type="text" placeholder="Stream" id="degree" name="degree" value="" class="classNone"/>
-                                    <div class="d-flex justify-content-between">
-                                        <p class="warning"></p>
-                                        <p class="warning"></p>
-                                        <p class="warning"></p>
-                                    </div>
-
-                                    <p class="warning"></p>
-
-                                    <div id="details">
-                                        <!-- <input type="text" id="board-name" name="boardDetails" placeholder="Board Name" value="" />
-                                    <input type="text" id="school-name" name="schoolDetails" placeholder="School Name"
-                                        value="" />
-                                    <input type="text" placeholder="Stream" id="degree" name="degree" value="" />
-                                    <div class="d-flex justify-content-between">
-                                        <p class="warning"></p>
-                                        <p class="warning"></p>
-                                        <p class="warning"></p>
-                                    </div> -->
-                                    </div>
-                                    <input type="text" id="reference" name="reference"
-                                        placeholder="Reference If Any   example:'friend'" value="" />
-                                    <p class="warning"></p>
-
-                                    <div class="classNone" id="errField"><i class="fa-solid fa-circle-exclamation" style="color:red;margin-right: 10px;"></i><span style="font-size: 13px;color:red" id="errorText">All fields are required</span>  </div>
-                                  
-
-                                    <div style="text-align: center;">
-                                        <button class="p-2" type="submit" value="Submit">Submit</button>
-                                    </div>
-
-                                </form>
-                            </div>
+          <div class="container" style="width:100%">
+                    <div class=" row d-flex justify-content-center" style="width:100%;margin:auto">
+                        <div>
+                            <h4 class="text-center mt-4"><strong>MYB Scholarship Registration</strong></h4>
                         </div>
+                        <div class="col-lg-6 col-md-12">
 
+                            <div style="padding: 20px;">
+                                <div class="form-styling m-auto"
+                                    style="background-color:transparent; padding: 20px;width:500px">
+
+                                    <form id="mybForm" >
+                                        <div class="d-flex">
+                                            <input style="margin-right: 10px;" type="text" id="firstName"
+                                                name="firstName" placeholder="First Name" value="" />
+
+                                            <input type="text" id="lastName" name="lastName" placeholder="Last Name"
+                                                value="" />
+
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="warning"></p>
+                                            <p class="warning"></p>
+                                        </div>
+
+                                        <input type="text" id="fatherName" name="fatherName" placeholder="Father's Name"
+                                            value="" />
+                                        <p class="warning"></p>
+
+                                        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"
+                                            value="" />
+                                        <p class="warning"></p>
+
+                                        <input type="text" id="location" name="location"
+                                            placeholder="Enter Your Permanent Address" value="" />
+                                        <p class="warning"></p>
+
+                                        <select id="gender" name="gender" style="max-width: 100%;">
+                                            <option value="">Select Your Gender Type</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="others">Others</option>
+                                        </select>
+                                        <p class="warning"></p>
+
+
+                                        <select id="education-detail-dropdown" name="educationDetail" 
+                                            style="max-width: 100%;" class="mybclass" onchange="classDetails(this.value)"";return false">
+                                            <option value="">Select Your Class</option>
+                                            <option value="cc">Competitive Courses</option>
+                                            <option value="pg">Post Graduate</option>
+                                            <option value="graduate">Under Graduate</option>
+                                            <option value="twelveth">12'th</option>
+                                            <option value="eleventh">11'th</option>
+                                            <option value="tenth">10'th</option>
+                                            <option value="ninth">9'th</option>
+                                            <option value="eighth">8'th</option>
+                                        </select>
+                                        <br/><br />
+                                        <textarea type="text" id="cc-name" name="boardDetails" placeholder="Describe your course" value="" class="classNone" style="height:20vh;"></textarea>
+
+                                        <input type="text" id="board-name" name="boardDetails" placeholder="Board Name" value="" class="classNone"/>
+                                        <input type="text" id="school-name" name="schoolDetails" placeholder="School Name"
+                                            value="" class="classNone"/>
+                                        <input type="text" placeholder="Stream" id="degree" name="degree" value="" class="classNone"/>
+                                        <div class="d-flex justify-content-between">
+                                            <p class="warning"></p>
+                                            <p class="warning"></p>
+                                            <p class="warning"></p>
+                                        </div>
+
+                                        <p class="warning"></p>
+
+                                        <div id="details">
+                                            
+                                        </div>
+                                        <input type="text" id="reference" name="reference"
+                                            placeholder="Reference If Any   example:'friend'" value="" />
+                                        <p class="warning"></p>
+
+                                      <div class="classNone" id="errField"><i class="fa-solid fa-circle-exclamation" style="color:red;margin-right: 10px;"></i><span style="font-size: 13px;color:red" id="errorText">All fields are required</span>  </div>
+
+                                        <div style="text-align: center;">
+                                            <button class="p-2" type="submit" value="Submit">Submit</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <!-- form ends here -->
+                        <div class="col-lg-5 col-md-12" >
+                          <h4 style="margin-top: 20px;font-weight: bold;">Please read the terms and conditions carefully
+                        </h4>  
+                        <br>
+                            1. For class 8 test will contains question of Math, Science, English Grammar and General Knowledge in equal proportion.
+                            <br><br>
+                            2. For class 9-10 test will contains question of Math, Science, English Grammar and General Knowledge. 60% of the question will be asked from the material provided
+                            rest 40% will be from other study materials.
+                            <br><br>
+                            3. For class -11& 12 questions will be asked from their respective Streams and General Knowledge where 50% will be from the material provided and 50% beased on them.
+                            <br><br>
+                            4. For undergraduates and postgraduates paper wil be concluded from their Streams, Math, English and G.K. this test will be concluded to find the depth of their
+                            knowledge so their old class questions can be asked.
+                            <br><br>
+                            If two or more students get equal marks then their name will be picked by random method and results one declared will be final.
+                        </div>
+                      
 
                     </div>
-                    <!-- form ends here -->
-                    <div class="col-lg-5 col-md-12" >
-                      <h4 style="margin-top: 20px;font-weight: bold;">Please read the terms and conditions carefully
-                    </h4>  
-                    <br>
-                        1. For class 8 test will contains question of Math, Science, English Grammar and General Knowledge in equal proportion.
-                        <br><br>
-                        2. For class 9-10 test will contains question of Math, Science, English Grammar and General Knowledge. 60% of the question will be asked from the material provided
-                        rest 40% will be from other study materials.
-                        <br><br>
-                        3. For class -11& 12 questions will be asked from their respective Streams and General Knowledge where 50% will be from the material provided and 50% beased on them.
-                        <br><br>
-                        4. For undergraduates and postgraduates paper wil be concluded from their Streams, Math, English and G.K. this test will be concluded to find the depth of their
-                        knowledge so their old class questions can be asked.
-                        <br><br>
-                        If two or more students get equal marks then their name will be picked by random method and results one declared will be final.
-                    </div>
-                  
-
                 </div>
-            </div>
 
 
             <!-- book courses start -->

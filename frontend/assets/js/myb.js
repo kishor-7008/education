@@ -135,22 +135,22 @@ const abc = (e) => {
 
   if (!isValidName(firstName)) {
     errField.removeAttribute("class");
-    errText.innerHTML = "Invaid First Name";
+    errText.innerHTML = "Invalid First Name";
     return;
   }
   if (!isValidName(lastName)) {
     errField.removeAttribute("class");
-    errText.innerHTML = "Invaid Last Name";
+    errText.innerHTML = "Invalid Last Name";
     return;
   }
   if (!isValidName(fatherName)) {
     errField.removeAttribute("class");
-    errText.innerHTML = "Invaid Father Name";
+    errText.innerHTML = "Invalid Father Name";
     return;
   }
   if (!isValidPhone(phoneNumber)) {
     errField.removeAttribute("class");
-    errText.innerHTML = "Invaid Phone Number";
+    errText.innerHTML = "Invalid Phone Number";
     return;
   }
 
